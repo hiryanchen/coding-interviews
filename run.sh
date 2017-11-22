@@ -3,6 +3,6 @@
 PROBLEM=$1
 FILENAME="${PROBLEM}/${PROBLEM}"
 
-tsc "${FILENAME}.ts"
+tsc --lib 'es6','dom' "${FILENAME}.ts"
 node "${FILENAME}.js"
 rm "${FILENAME}.js"
