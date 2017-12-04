@@ -14,5 +14,4 @@ const lengthOfLongestSubstring = (s:string) => {
     return maxLength;
 };
 
-const str = 'abcdbc';
-console.log(lengthOfLongestSubstring(str));
+console.log(lengthOfLongestSubstring('abcdbc'));
