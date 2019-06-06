@@ -1,14 +1,15 @@
 const lengthOfLongestSubstring = (s:string) => {
-    let i = 0, j = 0, maxLength = 0;
+    let leftIndex = 0, rightIndex = 0, maxLength = 0;
     const existingChars:Set<string> = new Set();
-    while (i < s.length && j < s.length) {
-        if (!existingChars.has(s[j])) {
-            existingChars.add(s[j]);
-            j++;
-            maxLength = Math.max(maxLength, j-i);
+    while (leftIndex < s.length && rightIndex < s.length) {
+        if (!existingChars.has(s[rightIndex])) {
+            existingChars.add(s[rightIndex]);
+            rightIndex++;
+            maxLength = Math.max(maxLength, rightIndex-leftIndex);
         } else {
-            existingChars.delete(s[i]);
-            i++;
+            // Found a duplicate, remove the left index and the character.
+            existingChars.delete(s[leftIndex]);
+            leftIndex++;
         }
     }
     return maxLength;

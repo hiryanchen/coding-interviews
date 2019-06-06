@@ -4,3 +4,6 @@ To compile and run a specific solution for a coding interview.
 
 ./run.sh &lt;problem&gt;
 
+Example:
+./run.sh longestPalindromicSubstring
+
