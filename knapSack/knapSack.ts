@@ -7,6 +7,7 @@ interface Item {
  * Returns the maximum value we could get.
  * @param items List of items with value and weight.
  * @param capacity The weight capacity we could fit in a bag.
+ * @returns Maxium value obtainable given the capacity constraint.
  */
 function knapSack(items:Array<Item>, capacity:number) {
     // maxValueMap[itemIndex, weight] signals the maximum value
