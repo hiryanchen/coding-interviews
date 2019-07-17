@@ -1,5 +1,5 @@
 /**
- * This is a Typescript implementation of merge sort of an array of integers.
+ * Merge sort an array of numbers.
  */
 function mergeSort(arr:Array<number>):Array<number> {
   // Base case of nothing to sort

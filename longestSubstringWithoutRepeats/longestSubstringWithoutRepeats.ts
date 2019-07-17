@@ -1,3 +1,8 @@
+/**
+ * Find the longest substring without repeating characters.
+ * @param s Input string.
+ */
+
 const lengthOfLongestSubstring = (s:string) => {
     let leftIndex = 0, rightIndex = 0, maxLength = 0;
     const existingChars:Set<string> = new Set();
