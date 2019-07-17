@@ -1,7 +1,7 @@
 /**
  * This is a Typescript implementation of merge sort of an array of integers.
  */
-function mergeSort(arr:Array<number>) {
+function mergeSort(arr:Array<number>):Array<number> {
   // Base case of nothing to sort
   if (arr.length < 2) {
     return arr;
@@ -17,9 +17,9 @@ function merge(arrA:Array<number>, arrB:Array<number>) {
   const result:Array<number> = [];
   while (arrA.length && arrB.length) {
     if (arrA[0] <= arrB[0]) {
-      result.push(arrA.shift());
+      result.push(arrA.shift()!);
     } else {
-      result.push(arrB.shift());
+      result.push(arrB.shift()!);
     }
   }
 
