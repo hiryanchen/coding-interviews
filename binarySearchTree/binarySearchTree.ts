@@ -4,7 +4,10 @@ interface BSTNode {
     right?: BSTNode;
 }
 
-// Print Tree
+/**
+ * Print an in-order traversal of the tree.
+ * @param node starting node.
+ */
 function printTree(node?:BSTNode) {
     if (!node) {
         return;
