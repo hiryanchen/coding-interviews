@@ -3,6 +3,7 @@
  * @param str The requested string.
  */
 function longestPalindromicSubstring(str:string):string {
+  // Current start and end index of the longest Palindrom.
   let start:number = 0, end:number = 0;
   for (let i:number = 0; i < str.length; i++) {
     // Odd length case: longest palindrom length expanded from the indexed

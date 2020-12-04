@@ -7,7 +7,11 @@ function multiplyLargeStrings(strA:string, strB:string):string {
     let resultStr:string = '';
     const lenA = strA.length;
     const lenB = strB.length;
-    // Allocate enough size of the buffer to fix the potential result
+    // Allocate enough size of the buffer to fix the potential result;
+    // the multiplication will actullay be carried out and store from
+    // the lower position to the higher position and stored in an
+    // increasing index order which means "visually" later we need
+    // to reverse it.
     let resultNums:Array<number> = new Array(lenA+lenB).fill(0);
     
     let bufferLocation = 0;
@@ -28,7 +32,8 @@ function multiplyLargeStrings(strA:string, strB:string):string {
         }
     }
 
-    // Reconstruct the string.
+    // Reconstruct the string by first removing extra 0 at the beginning
+    // and then reversing the numners into the concatenation of the string.
     let resultNumIndex = resultNums.length - 1;
     while (resultNumIndex >= 0 && resultNums[resultNumIndex] === 0) {
         resultNumIndex--;
@@ -49,4 +54,5 @@ function multiplyLargeStrings(strA:string, strB:string):string {
 const strA:string = "1235421415454545454545454544"; 
 const strB:string = "1714546546546545454544548544544545";
 const correctResult = "2118187521397235888154583183918321221520083884298838480662480";
-console.log(correctResult == multiplyLargeStrings(strA, strB));
+console.log(`${strA} multiplied by ${strB} is ${multiplyLargeStrings(strA, strB)}`);
+// Can assert (correctResult == multiplyLargeStrings(strA, strB));
