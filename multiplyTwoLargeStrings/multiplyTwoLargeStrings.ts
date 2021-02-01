@@ -32,8 +32,9 @@ function multiplyLargeStrings(strA:string, strB:string):string {
         }
     }
 
-    // Reconstruct the string by first removing extra 0 at the beginning
-    // and then reversing the numners into the concatenation of the string.
+    // Reconstruct the string by first removing extra 0 at the end (which
+    // would have be front after versersal) and then reversing the numners
+    // into the concatenation of the string.
     let resultNumIndex = resultNums.length - 1;
     while (resultNumIndex >= 0 && resultNums[resultNumIndex] === 0) {
         resultNumIndex--;

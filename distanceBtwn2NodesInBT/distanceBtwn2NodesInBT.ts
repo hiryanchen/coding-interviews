@@ -32,6 +32,12 @@ const lowestCommonAncestor = (root:TreeNode|null, nodeA:TreeNode|null, nodeB:Tre
     return (leftLCA != null) ? leftLCA : rightLCA;
 }
 
+/**
+ * Calculates the distance between rootNode and childNode.
+ * @param rootNode The root node.
+ * @param childNode The possible child node under root node.
+ * @param level The current distance as calculated from the caller.
+ */
 const distance = (rootNode:TreeNode|null, childNode:TreeNode, level:number = 0):number => {
     if (rootNode == null) {
         return -1;

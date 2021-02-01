@@ -1,5 +1,6 @@
 /**
  * Given two vertices return the minimum number of edges between these two vertices.
+ * Standard BFS (Breadth First Search problem)
  * @param edges Array representation of all the edges in adjancy list format.
  * @param u Starting vertex.
  * @param v Ending vertex.

@@ -1,6 +1,7 @@
 /**
  * Find the longest substring without repeating characters.
  * @param s Input string.
+ * @returns Longest substring length without repeats.
  */
 
 const lengthOfLongestSubstring = (s:string) => {
