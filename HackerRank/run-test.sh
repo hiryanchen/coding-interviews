@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 #
-# Compiles HackerRank/solution.ts once, then runs it against every test case in
-# sockMerchant/ and compares each program output to the expected output.
+# Compiles a problem's solution.ts once, then runs it against every test case in
+# that problem folder and compares each program output to the expected output.
 #
-# Test cases are discovered automatically: every sockMerchant/input*.txt is paired
-# with the matching sockMerchant/expected*.txt
+# Test cases are discovered automatically: every <problem>/input*.txt is paired
+# with the matching <problem>/expected*.txt
 #   (input.txt  -> expected.txt,  input2.txt -> expected2.txt,  ...).
 #
-# Usage:  ./run-test.sh
+# Usage:  ./run-test.sh [problem-folder]
+#         ./run-test.sh                 # defaults to sockMerchant
+#         ./run-test.sh countingValleys
 #
 set -euo pipefail
 
@@ -15,8 +17,13 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 REPO_ROOT="$(cd .. && pwd)"
-CASE_DIR="sockMerchant"
+CASE_DIR="${1:-sockMerchant}"
 BUILD_DIR="build"
+
+if [ ! -f "$CASE_DIR/solution.ts" ]; then
+  echo "Error: $CASE_DIR/solution.ts not found." >&2
+  exit 1
+fi
 
 echo "==> Compiling solution.ts ..."
 # Use the repo's local TypeScript; solution.ts uses Set iteration, so downlevelIteration is on.
