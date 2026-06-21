@@ -1,2 +1,9 @@
 # Exclude all the generated JavaScript files from TypeScript compiler(tsc) for Node to run.
 */*.js
+
+# Dependencies
+node_modules/
+
+# Compiled output from run-test.sh
+build/
+**/build/

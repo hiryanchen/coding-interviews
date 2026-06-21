@@ -1,0 +1,10 @@
+{
+  "name": "coding-interviews",
+  "version": "1.0.0",
+  "description": "Coding interview practice solutions in TypeScript",
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.4.0"
+  }
+}
