@@ -2,7 +2,7 @@ A list of commonly asked coding interview questions implemented in TypeScript.
 
 Prerequisite:
 * Install Node (which includes both node.js and npm): https://nodejs.org/en/download/current/
-* Install NPM: npm install -g typescript
+* NPM nstall typescript: npm install -g typescript
 
 To compile and run a specific solution for a coding interview.
 
@@ -10,4 +10,8 @@ To compile and run a specific solution for a coding interview.
 
 Example:
 ./run.sh longestPalindromicSubstring
+
+Windows
+* npm install - tsx
+* npx tsx .\pairSum\pairSum.ts
 
